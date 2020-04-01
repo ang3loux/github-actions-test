@@ -1,6 +1,10 @@
 name: Shell Commands
 on:
-  - push
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    types: [synchronize]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
