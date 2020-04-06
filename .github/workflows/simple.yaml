@@ -1,13 +1,18 @@
 name: Shell Commands
 on:
-  - push
+    - push
 jobs:
-  run-shell-command:
-    runs-on: ubuntu-latest
-    steps:
-      - name: eccho a string
-        run: echo "Hello World!"
-      - name: multiline script
-        run: |
-          node -v
-          npm  -v
+    run-shell-command:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a string
+              run: echo "Hello World!"
+            - name: multiline script
+              run: |
+                  node -v
+                  npm  -v
+            - name: python command
+              run: |
+                  import platform
+                  print(platform.processor())
+              shell: python
